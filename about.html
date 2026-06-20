@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us — Hamza Shoes</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-cream text-charcoal font-body">
+
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-cream/90 backdrop-blur border-b border-saddle/15 transition-shadow">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="index.html" class="font-display text-2xl tracking-wide text-espresso">HAMZA<span class="text-rust">.</span></a>
+    <ul class="hidden lg:flex gap-10 text-sm uppercase tracking-wider text-charcoal/80">
+      <li><a href="index.html" class="hover:text-rust transition-colors">Home</a></li>
+      <li><a href="products.html" class="hover:text-rust transition-colors">Shop</a></li>
+      <li><a href="about.html" class="text-rust">About</a></li>
+      <li><a href="contact.html" class="hover:text-rust transition-colors">Contact</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-5">
+      <a href="checkout.html" class="relative text-charcoal hover:text-rust transition-colors" aria-label="Bag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/></svg>
+        <span id="cart-badge" class="hidden absolute -top-2 -right-2 bg-rust text-cream text-[10px] font-bold w-4 h-4 rounded-full grid place-items-center">0</span>
+      </a>
+      <a href="https://wa.me/923132933803" target="_blank" class="bg-rust hover:bg-saddle text-cream text-sm font-medium px-5 py-2.5 rounded-full transition-colors">Order on WhatsApp</a>
+    </div>
+    <button id="nav-open" class="lg:hidden text-2xl text-espresso">☰</button>
+  </div>
+  <ul id="mobile-nav" class="hidden lg:hidden flex-col bg-paper border-t border-saddle/15 px-6 py-4 space-y-4 text-sm uppercase tracking-wide">
+    <li class="flex justify-end"><button id="nav-close" class="text-xl">✕</button></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="checkout.html">Bag</a></li>
+  </ul>
+</nav>
+
+<header class="pt-32 pb-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+  <div class="reveal">
+    <p class="font-display italic text-rust mb-3">Our story</p>
+    <h1 class="font-display text-5xl text-espresso mb-6 leading-tight">Built on hide, held by thread.</h1>
+    <p class="text-charcoal/75 leading-relaxed mb-4">Hamza Shoes started in a small Karachi workshop with one belief: leather footwear should be made the slow way — cut by hand, shaped over wooden lasts, and saddle-stitched so the seam moves with your foot instead of fighting it.</p>
+    <p class="text-charcoal/75 leading-relaxed">Today we make shoes, sandals, slippers and loafers for men and women, using the same process we started with. No factory shortcuts, no synthetic soles passed off as leather — just real hide, real stitching, and pairs meant to be resoled, not replaced.</p>
+  </div>
+  <div class="reveal relative h-[28rem] stitch-box rounded-2xl overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Artisan hand-stitching leather in workshop" />
+  </div>
+</header>
+
+<!-- Values -->
+<section class="bg-paper py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="reveal font-display text-3xl text-espresso mb-12 text-center">What we stand for</h2>
+    <div class="reveal-stagger grid sm:grid-cols-3 gap-8 text-center">
+      <div class="bg-cream rounded-xl p-8">
+        <p class="font-display text-3xl text-rust mb-3">Hide</p>
+        <p class="text-charcoal/70 text-sm leading-relaxed">Full-grain and top-grain leather sourced locally — no synthetic blends, ever.</p>
+      </div>
+      <div class="bg-cream rounded-xl p-8">
+        <p class="font-display text-3xl text-rust mb-3">Hand</p>
+        <p class="text-charcoal/70 text-sm leading-relaxed">Every pair is cut and saddle-stitched by an artisan, not stamped out by machine.</p>
+      </div>
+      <div class="bg-cream rounded-xl p-8">
+        <p class="font-display text-3xl text-rust mb-3">Hold</p>
+        <p class="text-charcoal/70 text-sm leading-relaxed">Built to be resoled and repaired — footwear meant to last years, not seasons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process timeline -->
+<section class="max-w-5xl mx-auto px-6 py-24">
+  <h2 class="reveal font-display text-3xl text-espresso mb-12 text-center">From hide to pair</h2>
+  <div class="reveal-stagger space-y-10 stitch pt-10">
+    <div class="flex gap-6">
+      <span class="font-display text-2xl text-rust w-16 shrink-0">01</span>
+      <div><h3 class="font-display text-xl text-espresso mb-1">Selecting the hide</h3><p class="text-charcoal/70 text-sm">We inspect each leather sheet for grain quality and thickness before it's approved for cutting.</p></div>
+    </div>
+    <div class="flex gap-6">
+      <span class="font-display text-2xl text-rust w-16 shrink-0">02</span>
+      <div><h3 class="font-display text-xl text-espresso mb-1">Hand-cutting</h3><p class="text-charcoal/70 text-sm">Patterns are cut by hand against the grain direction to keep each panel strong and consistent.</p></div>
+    </div>
+    <div class="flex gap-6">
+      <span class="font-display text-2xl text-rust w-16 shrink-0">03</span>
+      <div><h3 class="font-display text-xl text-espresso mb-1">Saddle-stitching</h3><p class="text-charcoal/70 text-sm">Two needles, one thread, locked through every hole — a seam that won't unravel if one stitch breaks.</p></div>
+    </div>
+    <div class="flex gap-6">
+      <span class="font-display text-2xl text-rust w-16 shrink-0">04</span>
+      <div><h3 class="font-display text-xl text-espresso mb-1">Finishing</h3><p class="text-charcoal/70 text-sm">Edges are burnished, soles attached, and every pair is hand-inspected before it leaves the workshop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Owner / contact strip -->
+<section class="bg-espresso text-cream py-16">
+  <div class="reveal max-w-3xl mx-auto px-6 text-center">
+    <h2 class="font-display text-3xl mb-4">Run by hand, answered in person</h2>
+    <p class="text-cream/75 mb-2">Founder & Owner: <span class="text-thread">Hamza Khan</span></p>
+    <p class="text-cream/75 mb-8">Every order goes straight to our WhatsApp — no call centre, no chatbot.</p>
+    <a href="https://wa.me/923132933803" target="_blank" class="inline-block bg-rust hover:bg-saddle text-cream px-8 py-3.5 rounded-full font-medium transition-colors">Chat with us — 0313 2933803</a>
+  </div>
+</section>
+
+<footer class="bg-espresso text-cream/70">
+  <div class="max-w-7xl mx-auto px-6 pt-12 pb-8 stitch text-xs text-center">© 2026 Hamza Shoes. Karachi, Pakistan.</div>
+</footer>
+
+<a href="https://wa.me/923132933803" target="_blank" class="wa-pulse fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full grid place-items-center shadow-xl">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.003c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.1-1.17-.578-1.353-.645-.182-.066-.315-.1-.448.1-.133.197-.512.645-.627.78-.116.13-.232.146-.43.048-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.197-.012-.3.088-.398.087-.084.197-.22.296-.33.1-.11.133-.187.198-.32.066-.13.034-.246-.017-.345-.05-.1-.448-1.076-.613-1.47-.16-.389-.323-.335-.448-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.197-.692.677-.692 1.654s.71 1.916.81 2.05c.098.13 1.39 2.123 3.367 2.977.47.203.838.325 1.124.416.472.15.902.13 1.24.078.38-.057 1.17-.477 1.336-.938.165-.46.165-.853.115-.937-.05-.084-.182-.133-.38-.232" /></svg>
+</a>
+
+<script src="app.js"></script>
+</body>
+</html>

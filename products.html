@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — Hamza Shoes</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-cream text-charcoal font-body">
+
+<!-- ===== NAV ===== -->
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-cream/90 backdrop-blur border-b border-saddle/15 transition-shadow">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="index.html" class="font-display text-2xl tracking-wide text-espresso">HAMZA<span class="text-rust">.</span></a>
+    <ul class="hidden lg:flex gap-10 text-sm uppercase tracking-wider text-charcoal/80">
+      <li><a href="index.html" class="hover:text-rust transition-colors">Home</a></li>
+      <li><a href="products.html" class="text-rust">Shop</a></li>
+      <li><a href="about.html" class="hover:text-rust transition-colors">About</a></li>
+      <li><a href="contact.html" class="hover:text-rust transition-colors">Contact</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-5">
+      <a href="checkout.html" class="relative text-charcoal hover:text-rust transition-colors" aria-label="Bag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/></svg>
+        <span id="cart-badge" class="hidden absolute -top-2 -right-2 bg-rust text-cream text-[10px] font-bold w-4 h-4 rounded-full grid place-items-center">0</span>
+      </a>
+      <a href="https://wa.me/923132933803" target="_blank" class="bg-rust hover:bg-saddle text-cream text-sm font-medium px-5 py-2.5 rounded-full transition-colors">Order on WhatsApp</a>
+    </div>
+    <button id="nav-open" class="lg:hidden text-2xl text-espresso">☰</button>
+  </div>
+  <ul id="mobile-nav" class="hidden lg:hidden flex-col bg-paper border-t border-saddle/15 px-6 py-4 space-y-4 text-sm uppercase tracking-wide">
+    <li class="flex justify-end"><button id="nav-close" class="text-xl">✕</button></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="checkout.html">Bag</a></li>
+  </ul>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="pt-32 pb-12 max-w-7xl mx-auto px-6">
+  <p class="reveal font-display italic text-rust mb-2">The collection</p>
+  <h1 class="reveal font-display text-5xl text-espresso mb-4">Shoes, sandals, slippers & loafers</h1>
+  <p class="reveal text-charcoal/70 max-w-xl">For men and women. Every pair shown here can be ordered directly over WhatsApp — tell us your size and we'll confirm availability.</p>
+</header>
+
+<!-- ===== FILTERS ===== -->
+<div class="max-w-7xl mx-auto px-6 mb-10 flex flex-wrap gap-3" id="filters">
+  <button data-filter="all" class="filter-btn bg-espresso text-cream px-5 py-2 rounded-full text-sm">All</button>
+  <button data-filter="men" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Men</button>
+  <button data-filter="women" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Women</button>
+  <button data-filter="shoes" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Shoes</button>
+  <button data-filter="sandals" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Sandals</button>
+  <button data-filter="loafers" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Loafers</button>
+  <button data-filter="slippers" class="filter-btn bg-paper border border-saddle/30 px-5 py-2 rounded-full text-sm hover:bg-saddle/10">Slippers</button>
+</div>
+
+<!-- ===== PRODUCT GRID ===== -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+  <div id="product-grid" class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div class="product-card" data-tags="men shoes" id="mens-shoes">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Espresso Oxford men's leather shoe"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Shoes — Men</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Espresso Oxford</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Full-grain leather, leather sole</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 7,200</span><button onclick="chamraAddToCart('Espresso Oxford', 7200)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="men shoes">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Black formal derby shoe"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Shoes — Men</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Black Derby</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Hand-stitched welt, formal fit</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 7,500</span><button onclick="chamraAddToCart('Black Derby', 7500)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="men loafers" id="loafers">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1582897085656-c636d006a246?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Tan leather penny loafer"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Loafers — Men</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Saddle Tan Loafer</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Penny strap, slip-on comfort</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 6,500</span><button onclick="chamraAddToCart('Saddle Tan Loafer', 6500)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="women loafers">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Women's tan loafer flats"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Loafers — Women</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Cognac Flat Loafer</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Soft sole, everyday wear</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 5,800</span><button onclick="chamraAddToCart('Cognac Flat Loafer', 5800)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="women sandals" id="womens-sandals">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Strappy leather sandal women"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Sandals — Women</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Cognac Strap Sandal</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Adjustable buckle strap</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 4,800</span><button onclick="chamraAddToCart('Cognac Strap Sandal', 4800)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="men sandals">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Men's leather peshawari sandal"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Sandals — Men</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Peshawari Sandal</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Traditional hand-woven straps</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 3,900</span><button onclick="chamraAddToCart('Peshawari Sandal', 3900)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="men slippers" id="slippers">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Leather home slipper"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Slippers — Unisex</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Home Hide Slipper</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Cushioned footbed, indoor use</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 2,900</span><button onclick="chamraAddToCart('Home Hide Slipper', 2900)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="women slippers">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Women's soft leather mule slipper"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Slippers — Women</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Blush Mule Slipper</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Open-back, easy slip-on</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 3,200</span><button onclick="chamraAddToCart('Blush Mule Slipper', 3200)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+    <div class="product-card" data-tags="women shoes">
+      <div class="rounded-xl overflow-hidden mb-4 h-72 bg-paper"><img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Women's leather oxford shoe"></div>
+      <p class="text-xs uppercase tracking-wider text-rust mb-1">Shoes — Women</p>
+      <h3 class="font-display text-lg text-espresso mb-1">Ivory Brogue</h3>
+      <p class="text-sm text-charcoal/60 mb-3">Perforated detail, low heel</p>
+      <div class="flex items-center justify-between"><span class="font-medium">PKR 6,200</span><button onclick="chamraAddToCart('Ivory Brogue', 6200)" class="text-sm text-saddle hover:text-rust">Add to bag</button></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-espresso text-cream/70">
+  <div class="max-w-7xl mx-auto px-6 pt-16 pb-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-display text-2xl text-cream mb-3">HAMZA<span class="text-rust">.</span></p>
+      <p class="text-sm leading-relaxed">Handcrafted leather shoes, sandals, slippers and loafers for men and women. Karachi, Pakistan.</p>
+    </div>
+    <div>
+      <p class="text-cream uppercase text-xs tracking-wider mb-4">Shop</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html#mens-shoes" class="hover:text-rust">Men's Shoes</a></li>
+        <li><a href="products.html#womens-sandals" class="hover:text-rust">Women's Sandals</a></li>
+        <li><a href="products.html#loafers" class="hover:text-rust">Loafers</a></li>
+        <li><a href="products.html#slippers" class="hover:text-rust">Slippers</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-cream uppercase text-xs tracking-wider mb-4">Company</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-rust">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-rust">Contact</a></li>
+        <li><a href="checkout.html" class="hover:text-rust">Your Bag</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-cream uppercase text-xs tracking-wider mb-4">Get in touch</p>
+      <ul class="space-y-2 text-sm">
+        <li>WhatsApp: <a href="https://wa.me/923132933803" class="hover:text-rust">0313 2933803</a></li>
+        <li>Owner: <span class="text-cream/90">Hamza Khan</span></li>
+        <li>Location: Karachi, Pakistan</li>
+      </ul>
+    </div>
+  </div>
+  <div class="stitch max-w-7xl mx-auto px-6 py-6 text-xs">© 2026 Hamza Shoes. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/923132933803" target="_blank" class="wa-pulse fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full grid place-items-center shadow-xl">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.003c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.1-1.17-.578-1.353-.645-.182-.066-.315-.1-.448.1-.133.197-.512.645-.627.78-.116.13-.232.146-.43.048-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.197-.012-.3.088-.398.087-.084.197-.22.296-.33.1-.11.133-.187.198-.32.066-.13.034-.246-.017-.345-.05-.1-.448-1.076-.613-1.47-.16-.389-.323-.335-.448-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.197-.692.677-.692 1.654s.71 1.916.81 2.05c.098.13 1.39 2.123 3.367 2.977.47.203.838.325 1.124.416.472.15.902.13 1.24.078.38-.057 1.17-.477 1.336-.938.165-.46.165-.853.115-.937-.05-.084-.182-.133-.38-.232" /></svg>
+</a>
+
+<script src="app.js"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('bg-espresso','text-cream'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.add('bg-paper','border','border-saddle/30'));
+    btn.classList.add('bg-espresso','text-cream');
+    btn.classList.remove('bg-paper','border','border-saddle/30');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('#product-grid .product-card').forEach(card => {
+      const tags = card.dataset.tags.split(' ');
+      card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
